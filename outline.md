@@ -15,3 +15,10 @@ Probability with Genetics
 ## Combinations and Permutations
 
 # part3 - Other Distributions
+## Normal Distribution
+
+## Multinomial Distribution
+
+## Fancier Distributions
+
+# part4 - Bayes Theorem
