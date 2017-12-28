@@ -1,5 +1,6 @@
 Probability with Genetics
 ======
+by Bill Bynum and Brian Avery  
 # part1 - Coin flips and Chromosomes
 ## Basic Rules
 
