@@ -1,25 +1,23 @@
 Probability with Genetics
 ======
 by Bill Bynum and Brian Avery  
-# part1 - Coin flips and Chromosomes
-## Basic Rules
 
-## Tree Diagrams
+# Coin flips and Chromosomes - Basic Rules
 
-## And/Or
+# Tree Diagrams
 
-## Conditional Probability
+# And/Or
 
-# part2 - The Binomial Distribution
-## Binomal Basics
+# Conditional Probability
 
-## Combinations and Permutations
+# The Binomial Distribution
 
-# part3 - Other Distributions
-## Normal Distribution
+# Combinations and Permutations
 
-## Multinomial Distribution
+# Normal Distribution
 
-## Fancier Distributions
+# Multinomial Distribution
 
-# part4 - Bayes Theorem
+# Fancier Distributions
+
+# Bayes Theorem
