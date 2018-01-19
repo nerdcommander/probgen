@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Probability and Genetics</title>
+  <meta name="description" content="Probability and genetics, genetics and probability, free open-source book written in Rstudio with bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Probability and Genetics" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Probability and genetics, genetics and probability, free open-source book written in Rstudio with bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Probability and Genetics" />
+  
+  <meta name="twitter:description" content="Probability and genetics, genetics and probability, free open-source book written in Rstudio with bookdown::gitbook." />
+  
+
+<meta name="author" content="Bill Bynum and Brian Avery">
+
+
+<meta name="date" content="2018-01-13">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="trees.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Probability and Genetics</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#motivation"><i class="fa fa-check"></i><b>0.1</b> Motivation</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#about-the-authors"><i class="fa fa-check"></i><b>0.2</b> About the Authors</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i><b>1</b> Coin flips and Chromosomes - Probability Basics and Tree Diagrams</a><ul>
+<li class="chapter" data-level="1.1" data-path="basics.html"><a href="basics.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="basics.html"><a href="basics.html#chapter_scenario"><i class="fa fa-check"></i><b>1.2</b> Chapter Scenario</a></li>
+<li class="chapter" data-level="1.3" data-path="basics.html"><a href="basics.html#terminology"><i class="fa fa-check"></i><b>1.3</b> Terminology</a></li>
+<li class="chapter" data-level="1.4" data-path="basics.html"><a href="basics.html#simulation"><i class="fa fa-check"></i><b>1.4</b> Simulation</a></li>
+<li class="chapter" data-level="1.5" data-path="basics.html"><a href="basics.html#tree_diagrams"><i class="fa fa-check"></i><b>1.5</b> Tree Diagrams</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="basics.html"><a href="basics.html#an_example_with_rats"><i class="fa fa-check"></i><b>1.5.1</b> An Example with Rats</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="basics.html"><a href="basics.html#the_urn_model"><i class="fa fa-check"></i><b>1.6</b> The Urn Model</a></li>
+<li class="chapter" data-level="1.7" data-path="basics.html"><a href="basics.html#and_ors_nots"><i class="fa fa-check"></i><b>1.7</b> Ands, Ors, and Nots</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="basics.html"><a href="basics.html#kill_the_student"><i class="fa fa-check"></i><b>1.7.1</b> In an Attempt to Kill the Student, the Authors Solve the Same Simple Problem Four Ways (One Bad and Three Good)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="basics.html"><a href="basics.html#appendix-1-genetics-examples"><i class="fa fa-check"></i><b>1.8</b> Appendix 1: Genetics Examples</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="basics.html"><a href="basics.html#genetics-terminology"><i class="fa fa-check"></i><b>1.8.1</b> Genetics Terminology</a></li>
+<li class="chapter" data-level="1.8.2" data-path="basics.html"><a href="basics.html#genetics-basics"><i class="fa fa-check"></i><b>1.8.2</b> Genetics Basics</a></li>
+<li class="chapter" data-level="1.8.3" data-path="basics.html"><a href="basics.html#genetics-simulation"><i class="fa fa-check"></i><b>1.8.3</b> Genetics Simulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="trees.html"><a href="trees.html"><i class="fa fa-check"></i><b>2</b> Tree Diagrams</a></li>
+<li class="chapter" data-level="3" data-path="and-or.html"><a href="and-or.html"><i class="fa fa-check"></i><b>3</b> And/Or</a><ul>
+<li class="chapter" data-level="3.1" data-path="and-or.html"><a href="and-or.html#and-statements"><i class="fa fa-check"></i><b>3.1</b> <code>and</code> statements</a></li>
+<li class="chapter" data-level="3.2" data-path="and-or.html"><a href="and-or.html#or-statements"><i class="fa fa-check"></i><b>3.2</b> <code>or</code> statements</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="conditional.html"><a href="conditional.html"><i class="fa fa-check"></i><b>4</b> Conditional Probability</a><ul>
+<li class="chapter" data-level="4.1" data-path="conditional.html"><a href="conditional.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="conditional.html"><a href="conditional.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="the-binomial-distribution.html"><a href="the-binomial-distribution.html"><i class="fa fa-check"></i><b>5</b> The Binomial Distribution</a></li>
+<li class="chapter" data-level="6" data-path="combinations-and-permutations.html"><a href="combinations-and-permutations.html"><i class="fa fa-check"></i><b>6</b> Combinations and Permutations</a><ul>
+<li class="chapter" data-level="6.1" data-path="combinations-and-permutations.html"><a href="combinations-and-permutations.html#combinations"><i class="fa fa-check"></i><b>6.1</b> Combinations</a></li>
+<li class="chapter" data-level="6.2" data-path="combinations-and-permutations.html"><a href="combinations-and-permutations.html#permutations"><i class="fa fa-check"></i><b>6.2</b> Permutations</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="normal.html"><a href="normal.html"><i class="fa fa-check"></i><b>7</b> Normal Distribution</a></li>
+<li class="chapter" data-level="8" data-path="multinom.html"><a href="multinom.html"><i class="fa fa-check"></i><b>8</b> Multinomial Distribution</a></li>
+<li class="chapter" data-level="9" data-path="fancy.html"><a href="fancy.html"><i class="fa fa-check"></i><b>9</b> Fancier Distributions</a></li>
+<li class="chapter" data-level="10" data-path="bayes.html"><a href="bayes.html"><i class="fa fa-check"></i><b>10</b> Bayes Theorem</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Probability and Genetics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="basics" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Coin flips and Chromosomes - Probability Basics and Tree Diagrams</h1>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">1.1</span> Introduction</h2>
+<p>In this chapter, basic terminology and principles of probability are introduced along with simulation and tree diagrams as important tools to analyze probability questions.</p>
+</div>
+<div id="chapter_scenario" class="section level2">
+<h2><span class="header-section-number">1.2</span> Chapter Scenario</h2>
+<p>Imagine a simple situation where two coins are tossed and the number of heads is observed and the outcome has some relevance for you depending on whether the result yields 0, 1, or 2 heads. Do you think each of these outcomes is equally likely? What do you think is the probability of each of these outcomes?</p>
+<p>We use this coin-flipping scenario as a primary example not because we have inherent interest flipping coins but because this scenario is an effective model for many real-world situations such as gene inheritance.</p>
+</div>
+<div id="terminology" class="section level2">
+<h2><span class="header-section-number">1.3</span> Terminology</h2>
+<p><strong>Probability</strong> is the measure of the likelihood of an event on a scale of 0 to 1 where a probability of 1 can be interpreted as certainty the event will occur and a probability of 0 interpreted as certainty the event will NOT occur. There are two main schools of thought regarding what probability is - the frequentist and the bayesian - but for our initial purposes we will think of the probability of an event as the relative frequency of its occurrence in the long run. In very informal shorthand, we think of probability as the ratio of successes to the total number of trials as shown below but must be careful to distinguish between exact theoretical probabilities and approximate empirical probabilities.</p>
+<p><span class="math display">\[Probability = \frac{successes}{total}\]</span></p>
+<p>Consider a coin is flipped and we examine whether it lands on heads or tails. We say it is a fair coin if heads and tails are equally likely. In this case, the probability of the coin landing on heads is <span class="math inline">\(1/2\)</span> which can also be expressed as <span class="math inline">\(0.5\)</span> or <span class="math inline">\(50\%\)</span> meaning that as the experiment is repeated the proportion of heads ultimately approaches 0.50. It does not mean that in any number of trials we will obtain heads exactly <span class="math inline">\(50\%\)</span> of the time as samples will vary.</p>
+<p>A <strong>probability experiment</strong> is a process with a random element producing a well-defined outcome such as the tossing of a coin described above and the chapter scenario described above where two coins are flipped and you are interested in whether 0, 1, or 2 heads are seen. An <strong>event</strong> is any well-defined outcome of the probability experiment, such as, the outcome of getting at least one head when flipping two coins.</p>
+<p>We often use function notation when describing probabilities. For event <strong>E</strong> in a probability experiment we will use <strong>P(E)</strong> to represent the probability event E occurs. We also informally use short descriptions of events combined with probability function notation. For example, when flipping one coin we can note <span class="math inline">\(P(heads)=1/2\)</span>.</p>
+<p>The <strong>sample space</strong> is a list of all possible outcomes of a probability experiment. One desirable property of a sample space description is that the simple events we use are <strong>equally likely</strong>, meaning all have the same probability of occurring. For example, for the experiment of flipping two coins one might consider <span class="math inline">\(\{0\,heads,\,1\, head,\,2\,heads\}\)</span> as a potential sample space but enquiring minds might wonder whether or not each of these outcomes is equally likely.</p>
+</div>
+<div id="simulation" class="section level2">
+<h2><span class="header-section-number">1.4</span> Simulation</h2>
+<p>Simulation is often a helpful tool to explore probability questions like the question above regarding whether getting 0, 1, or 2 heads when flipping two coins are all equally likely. The code below simulates 10,000 trials of two coin flips keeping track of the number of heads, number of tails, and proportion of heads for each trial.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sim_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">do</span>(<span class="dv">10000</span>)<span class="op">*</span><span class="kw">rflip</span>(<span class="dt">n=</span><span class="dv">2</span>, <span class="dt">prob=</span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span>)
+knitr<span class="op">::</span><span class="kw">kable</span>(
+  <span class="kw">head</span>(sim_<span class="dv">2</span>), <span class="dt">caption =</span> <span class="st">&#39;Table 1: Two Coin Simulation&#39;</span>,
+  <span class="dt">booktabs =</span> <span class="ot">TRUE</span>
+)</code></pre></div>
+<table>
+<caption><span id="tab:nice-tab">Table 1.1: </span>Table 1: Two Coin Simulation</caption>
+<thead>
+<tr class="header">
+<th align="right">n</th>
+<th align="right">heads</th>
+<th align="right">tails</th>
+<th align="right">prop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0.0</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">1.0</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.5</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">1.0</td>
+</tr>
+</tbody>
+</table>
+<p>The result is visualized in a histogram of the <code>heads</code> variable showing the frequency of obtaining 0, 1, and 2 heads.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data=</span>sim_<span class="dv">2</span>, <span class="kw">aes</span>(<span class="dt">x=</span>heads)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">y=</span>..density..), <span class="dt">binwidth =</span> <span class="dv">1</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig-1"></span>
+<img src="probgen-bookdown_files/figure-html/nice-fig-1-1.png" alt="Histogram for Number of Heads When Flipping Two Coins" width="80%" />
+<p class="caption">
+Figure 1.1: Histogram for Number of Heads When Flipping Two Coins
+</p>
+</div>
+<p>Examining the histogram we see that obtaining one head is more likely than the other two options and, thus, getting 0, 1, and 2 heads when flipping two coins are not equally likely outcomes. Prompted by the results of the simulation, we want to know why getting one head is more likely and tree diagrams will help us.</p>
+</div>
+<div id="tree_diagrams" class="section level2">
+<h2><span class="header-section-number">1.5</span> Tree Diagrams</h2>
+<p>The outcomes of a probability experiment can be catalogued with a tree diagram where at each node the different branches represent the different possible outcomes at each stage of the process.</p>
+<p>Consider the tree diagram for flipping a single coin where we label each node as either H for Heads or T for tails and label the probability along each branch.</p>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig-2"></span>
+<img src="01-basics-figures/tree_one_coin.png" alt="Tree Diagram for One Coin" width="30%" />
+<p class="caption">
+Figure 1.2: Tree Diagram for One Coin
+</p>
+</div>
+<p>Including the possible outcomes for a second coin results in a tree diagram with four branches.</p>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig-3"></span>
+<img src="01-basics-figures/tree_two_coins.png" alt="Tree Diagram for Two Coins" width="60%" />
+<p class="caption">
+Figure 1.3: Tree Diagram for Two Coins
+</p>
+</div>
+<p>Each path from the top of the tree to the bottom represents one possible outcome when tossing two coins. In this experiment, there is a 50/50 chance of getting heads or tails thus all four paths are equally likely each occurring with probability <span class="math inline">\(0.5 \times 0.5 = 0.25\)</span>. If we think of the probability associated with each branch as the proportion of the time we travel down that branch then multiplying these probabilities makes perfect sense to determine the probability of traveling down sequential branches.</p>
+<p>We can now understand why getting one head is more likely as there are two paths, HT and TH, compared to only one path generating zero heads, TT, and only one path generating two heads, HH, resulting in the following probabilities:</p>
+<p><span class="math display">\[P(0\ heads) = P(TT) = (0.5)(0.5) = 0.25\]</span> <span class="math display">\[\small P(1\ head) = P(TH\ or\ HT) = P(TH) + P(HT) = (0.5)(0.5) + (0.5)(0.5) = 0.25 + 0.25 = 0.5\]</span></p>
+<p><span class="math display">\[P(2\ heads) = P(HH) = (0.5)(0.5) = 0.25\]</span></p>
+<div id="an_example_with_rats" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> An Example with Rats</h3>
+<p>Now consider the experiment of choosing three rats at random from a large population of rats that is 40% male and 60% female. Just as we did for coins, we can draw a tree diagram with branches representing the sex of the first, second, and third rat chosen and label the associated probabilities on each branch. Selecting the rats and identifying gender would be equivalent to having a coin that lands on one side 40% of the time and on the other 60% of the time. In the tree diagram below, we have added subscripts to identify whether we are referring to the first, second, or third rat selected.</p>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig-4"></span>
+<img src="01-basics-figures/tree_rat_sex.png" alt="Tree Diagram for Three Rats" width="60%" />
+<p class="caption">
+Figure 1.4: Tree Diagram for Three Rats
+</p>
+</div>
+<p>What is the probability of selecting 0 female rats? Note that because the population is large at each stage of the process the probability of selecting a female rat is 0.60.</p>
+<p><span class="math display">\[P(0\ female\ rats) = P(M_{1}\ and\ M_{2}\ and\ M_{3}) = (0.4) \times (0.4) \times (0.4) = 0.064\]</span></p>
+<p>What is the probability of selecting 1 female rat? There are actually three distinct paths through the tree where 1 female rat and 2 male rats are selected and each one has the probability <span class="math inline">\((0.6) \times (0.4)^2\)</span> thus the probability is</p>
+<p><span class="math display">\[P(1\ female\ rat) = 3 \times (0.6) (0.4)^2 = 0.288\]</span></p>
+<div id="practice-exercise-1" class="section level4">
+<h4><span class="header-section-number">1.5.1.1</span> Practice Exercise 1</h4>
+<p>For the probability experiment described above choosing three rats at random from a large population of rats that is 40% male and 60% female, what is the probability of getting 2 female rats? 3 female rats?</p>
+</div>
+<div id="practice-exercise-2" class="section level4">
+<h4><span class="header-section-number">1.5.1.2</span> Practice Exercise 2</h4>
+<p>Draw a tree diagram for the probability experiment of flipping three coins. Label each node as either H for Heads or T for tails and label the probability along each branch. Find the probabilities of obtaining exactly 0 heads, 1 head, 2 heads, and 3 heads.</p>
+</div>
+</div>
+</div>
+<div id="the_urn_model" class="section level2">
+<h2><span class="header-section-number">1.6</span> The Urn Model</h2>
+<p>When confronted with a question of personal importance to you where probabilistic concerns are relevant to getting an accurate answer, the ability to develop a model that captures important probability details is a key problem-solving tool. By <strong>model</strong> we mean a systematic description that shares all of the important characterics of the problem, be it a physical, visual, mathematical, or computational representation (<a href="http://www.dictionary.com/browse/model" class="uri">http://www.dictionary.com/browse/model</a>).</p>
+<p>For probability experiments two useful models are the coin-flipping model and the urn model. We have already looked briefly at a coin-flipping experiment. We will see throughout our probabilistic treatment of genetics that we will often use coin-flipping as a mental model to think about questions of genetic risk and reward. The urn model is another important way to think about probability questions.</p>
+<p>Consider an urn with some beads in it. Imagine the urn has 20 beads 12 of which are black and 8 white and we are to draw out three of these beads at random and we want to find the probability of ending up with 0, 1, 2, or 3 black beads.</p>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig-5"></span>
+<img src="01-basics-figures/urn1_picture.png" alt="The Urn Model" width="60%" />
+<p class="caption">
+Figure 1.5: The Urn Model
+</p>
+</div>
+<p>First, we need to be clear up one question: is the drawing out of beads to be done with replacement or without replacement? By <strong>with replacement</strong> we mean that after each draw of one bead, it is replaced, the beads thoroughly mixed, before another bead is selected at random. By <strong>without replacement</strong> we mean that after one bead is removed, it is not replaced before the next bead is selected. Note, if we are selecting three beads at once this could be viewed as equivalent to selecting the beads one at a time without replacement.</p>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig-6"></span>
+<img src="01-basics-figures/tree_urn1.png" alt="Tree Diagram for Three Beads" width="60%" />
+<p class="caption">
+Figure 1.6: Tree Diagram for Three Beads
+</p>
+</div>
+<p>For this experiment with three beads drawn at random without replacement from an urn containing 12 black and 8 white beads, what is the probability of ending up with 0, 1, 2, or 3 black beads, respectively?</p>
+<p>First, let’s tackle the probability of getting 0 black beads. From examining the tree we see</p>
+<p><span class="math display">\[P(0\ blacks) = P(W_{1}\ and\ W_{2}\ and\ W_{3}) = \frac{8}{20} \times \frac{7}{19} \times \frac{6}{18}\]</span></p>
+<p>Finding the probability of one black is more work. As we examine the tree we see there are three distinct paths resulting in one black. Check out their separate probabilities here.</p>
+<p><span class="math display">\[P(B_{1}\ and\ W_{2}\ and\ W_{3}) = \frac{12}{20} \times \frac{8}{19} \times \frac{7}{18} = 0.098\]</span></p>
+<p><span class="math display">\[P(W_{1}\ and\ B_{2}\ and\ W_{3}) = \frac{8}{20} \times \frac{12}{19} \times \frac{7}{18} = 0.098\]</span></p>
+<p><span class="math display">\[P(W_{1}\ and\ W_{2}\ and\ B_{3}) = \frac{8}{20} \times \frac{7}{19} \times \frac{12}{18} = 0.098\]</span></p>
+<p>In spite of the numerators being in different orders, we notice that these three separate probabilities are numerically equal. Thus, for the final probability we see</p>
+<p><span class="math display">\[P(1\ black) = 3 \times \frac{12}{20} \times \frac{8}{19} \times \frac{7}{18} = 0.295\]</span></p>
+</div>
+<div id="and_ors_nots" class="section level2">
+<h2><span class="header-section-number">1.7</span> Ands, Ors, and Nots</h2>
+<p>Most of the interesting probability questions involve combinations of simple events. In this section we examine the probabilities of two events both occurring (<strong>and</strong>), at least one of two events occurring (<strong>or</strong>), as well as an event not occurring (<strong>not</strong>).</p>
+<div id="kill_the_student" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> In an Attempt to Kill the Student, the Authors Solve the Same Simple Problem Four Ways (One Bad and Three Good)</h3>
+<p>By dissecting an easy problem we can gain insight into multiple problem-solving strategies that can be useful in other problems. Or we can kill motivation altogether. We will see.</p>
+<p>In the game of Risk competitors resolve attacks by rolling dice. Suppose that you are rolling two dice and you are interested in whether or not we obtain a six. We consider the following compound events.</p>
+<p>While there are six sides to each die, because we are primarily interested in whether or not we obtain a six, we will use the tree diagram below where event <strong>S</strong> represents getting a six and event <strong>N</strong> represents getting a non-six, ie., 1, 2, 3, 4, or 5.</p>
+<div class="figure" style="text-align: center"><span id="fig:nice-fig-7"></span>
+<img src="01-basics-figures/tree_two_dice_sixes.png" alt="Tree Diagram for Sixes on Two Dice" width="60%" />
+<p class="caption">
+Figure 1.7: Tree Diagram for Sixes on Two Dice
+</p>
+</div>
+<p>Even if we are tossing identical dice simultaneously it is helpful to conceptualize the experiment as if we are tossing the dice sequentially. We have added subscripts to identify whether we are referring to the first die tossed or the second die tossed.</p>
+<p>What is the probability of obtaining a six on both dice? Because the two events of getting a six on the first die and getting a six on the second die are <strong>independent</strong>, we can use <strong>The Multiplication Rule for Independent Events</strong> which says for any two independent events <span class="math inline">\(E\)</span> and <span class="math inline">\(F\)</span>, <span class="math inline">\(P(E\ and\ F) = P(E) \times P(F)\)</span>.</p>
+<p><span class="math display">\[P(two\ sixes) = P(S_{1}\ and\ S_{2}) = P(S_{1}) \times P(S_{2}) =  \frac{1}{6} \times \frac{1}{6}\]</span></p>
+<p>What is the probability of obtaining a six on at least one of the two dice? We examine this problem from four points of view - the wrong point of view, the addition rule, the partition technique, and the complement principle.</p>
+<div id="the-wrong-way" class="section level4">
+<h4><span class="header-section-number">1.7.1.1</span> The Wrong Way</h4>
+<p>Here is a faulty answer:</p>
+<p><span class="math display">\[P(at\ least\ one\ six) = P(S_{1}\ or\ S_{2}) = P(S_{1})+ P(S_{2}) = \frac{1}{6} + \frac{1}{6} = \frac{2}{6} = \frac{1}{3}\ \ WRONG!\]</span></p>
+<p>Can you spot the problem? The issue is that one branch with a six on both dice, the overlap where both events <span class="math inline">\(S_{1}\)</span> and <span class="math inline">\(S_{2}\)</span> occur, was counted twice.</p>
+</div>
+<div id="the-addition-rule" class="section level4">
+<h4><span class="header-section-number">1.7.1.2</span> The Addition Rule</h4>
+<p>Here is a correct version using what is called <strong>The Addition Rule</strong> where the overlap, since it was counted twice, is subtracted:</p>
+<p><span class="math display">\[P(at\ least\ one\ six) = P(S_{1}\ or\ S_{2}) = P(S_{1})+ P(S_{2}) - P(S_{1}\ AND\ S_{2}) =\\ \frac{1}{6} + \frac{1}{6} - \frac{1}{6} \times \frac{1}{6}  = \frac{11}{36}\]</span></p>
+</div>
+<div id="the-partition-approach" class="section level4">
+<h4><span class="header-section-number">1.7.1.3</span> The Partition Approach</h4>
+<p>An alternative approach is to <strong>partition</strong> the event into mutually exclusive parts. We might informally describe this approach as <em>divide and conquer</em>. In this case, there are three distinct branches that satisfy at least one six occurring:</p>
+<p><span class="math display">\[P(at\ least\ one\ six) = P(S_{1}\ and\ N_{2}) + P(N_{1}\ and\ S_{2}) + P(S_{1}\ and\ S_{2}) = \\  \frac{1}{6} \times \frac{5}{6} + \frac{5}{6} \times \frac{1}{6} + \frac{1}{6} \times \frac{1}{6} = \frac{11}{36}\]</span></p>
+</div>
+<div id="the-complement-principle" class="section level4">
+<h4><span class="header-section-number">1.7.1.4</span> The Complement Principle</h4>
+<p>A third correct approach uses <strong>The Complement Principle</strong> which observes that for any event <span class="math inline">\(E\)</span>, <span class="math inline">\(P(E) = 1 - P(not\ E)\)</span>. In this situation, we note <span class="math inline">\(P(at\ least\ one) = 1 - P(none)\)</span>. Sometimes it is less work to find the complement of an event and subtract from one.</p>
+<p><span class="math display">\[P(at\ least\ one\ six) = 1 - P(no\ sixes) = 1 - P(N_{1}\ and\ N_{2}) = \\  1 - \frac{5}{6} \times \frac{5}{6} = \frac{11}{36}\]</span></p>
+<p>To summarize what we have learned about problem-solving here, there is more than one way to solve a probability problem (and some ways are wrong!). But several good strategies to use are the addition rule being careful not to double-count, divide and conquer by partitioning the event into mutually exclusive pieces, or use the complement principle to solve the opposite problem and subtract this from one.</p>
+</div>
+</div>
+</div>
+<div id="appendix-1-genetics-examples" class="section level2">
+<h2><span class="header-section-number">1.8</span> Appendix 1: Genetics Examples</h2>
+<p>In this appendix, you are introduced to the absolute basic terminology of genetics and how the principles of probability that you learned in chapter 1 can be applied to genetics.<br />
+We are going to adapt the examples from the main part of chapter 1 to genetics. We’ll look at some of the same tree diagrams and simulations but within a simple genetics framework (rather than coin flips and urns).</p>
+<div id="genetics-terminology" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> Genetics Terminology</h3>
+<p>For now, we are going to use the minimum of genetic lingo to get going:</p>
+<p><strong>trait</strong>: a characteristic, something you can see or measure (e.g. height, Huntington’s disease)</p>
+<p><strong>gene</strong>: the DNA that controls a trait (e.g. hemoglobin beta gene) usually shown with a letter or letters (e.g. Hb)</p>
+<p><strong>variant</strong>: one of several versions of a gene (e.g. HbS variant in hemoglobin beta that can cause Sickle Cell Anemia but there are other variants of the same gene (HbC, HbE, etc.), a.k.a. allele)</p>
+<p><strong>chromosome</strong>: long, continuous stretch of DNA that contains many genes (humans have 2 copies of each of 22 numbered chromosomes and either 2 X chromosomes for females or an X and a Y for males)</p>
+<p><strong>gamete</strong>: specialized cell that has only 1 copy of each chromosome that is used during sexual reproduction (e.g. egg or sperm)</p>
+</div>
+<div id="genetics-basics" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Genetics Basics</h3>
+<div id="intro-to-chromosomal-genetics" class="section level4">
+<h4><span class="header-section-number">1.8.2.1</span> intro to chromosomal genetics</h4>
+<ul>
+<li>humans have 2 copies of every gene (can be same variant or different)</li>
+<li><strong>meiosis</strong> is the process of making gametes with only 1 copy of all of the genes</li>
+<li><strong>fertilization</strong> fuses two gametes each with 1 copy back into a cell/organism with 2 copies (1 from each parent/gamete)</li>
+</ul>
+<p>To summarize the important points about <strong>meiosis</strong>, parents each make gametes that contain only one of their 2 possible copies of each chromosome. Then the gametes can fuse together by fertilization to make the offspring (next generation) that again has 2 copies of each chromosome (one from each of their parents).</p>
+<p>Below are some cartoons of meiosis starting with an example cell that has 2 chromosomes (one with the A gene and a second with the B gene) and this organism has 2 copies of each chromosome.</p>
+<div class="figure" style="text-align: center"><span id="fig:gen-fig-1"></span>
+<img src="01-basics-figures/meiosis1.png" alt="cartoon example cell" width="75%" />
+<p class="caption">
+Figure 1.8: cartoon example cell
+</p>
+</div>
+<p>Notice that the chromosomes have different variants.</p>
+<p>When that cell goes through meiosis, it produces gametes that have one copy of each of the 2 different chromosomes.</p>
+<div class="figure" style="text-align: center"><span id="fig:gen-fig-2"></span>
+<img src="01-basics-figures/meiosis2.png" alt="making gametes" width="75%" />
+<p class="caption">
+Figure 1.9: making gametes
+</p>
+</div>
+<p>Compare the original/parent and gamete and convince yourself that this gamete has one of each of the different chromosomes in the original/parent organism. Notice that the figure below says that the gamete shown is only one of the possibilities. If you like to think ahead, what are the other possibilities? If you’re not up for it yet, don’t worry, we’ll get there.</p>
+<p>To make an offspring, 2 gametes fuse by fertilization.</p>
+<div class="figure" style="text-align: center"><span id="fig:gen-fig-3"></span>
+<img src="01-basics-figures/meiosis3.png" alt="fertilization" width="75%" />
+<p class="caption">
+Figure 1.10: fertilization
+</p>
+</div>
+<p>Since each gamete has only 1 copy of each chromosome, when 2 gametes fuse, there are again 2 copies of each chromosome (one from each of their parents). So, new humans have 2 chromosomes, one from each parent.</p>
+</div>
+<div id="thinking-probilitisically" class="section level4">
+<h4><span class="header-section-number">1.8.2.2</span> thinking probilitisically</h4>
+<p>To wrap this back around to probability and tree diagrams, you can think of each parent as having a coin for each chromosome, and each chromosome-coin has 2 sides - H and T for a coin, one for each copy of the chromosome (A1 or A2). The chromosome version is equally likely to fall on the A1 or A2 “side” (as long as we only consider one gene on each chromosome, which we will do for now). So, our tree diagram looks like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:gen-fig-4"></span>
+<img src="01-basics-figures/1csome_tree.png" alt="one chromosome tree - first parent" width="50%" />
+<p class="caption">
+Figure 1.11: one chromosome tree - first parent
+</p>
+</div>
+<p>Now if we think of the gametes from the second parent as a second “coin” with A1 and A2 “sides”, our tree diagram looks like this:</p>
+<div class="figure" style="text-align: center"><span id="fig:gen-fig-5"></span>
+<img src="01-basics-figures/1csome_tree2.png" alt="one chromosome tree - second parent" width="70%" />
+<p class="caption">
+Figure 1.12: one chromosome tree - second parent
+</p>
+</div>
+<p>Then we can use the multiplication rule to find the probabilities of the different offspring as seen below:</p>
+<div class="figure" style="text-align: center"><span id="fig:gen-fig-6"></span>
+<img src="01-basics-figures/1csome_tree3.png" alt="one chromosome tree - offspring" width="90%" />
+<p class="caption">
+Figure 1.13: one chromosome tree - offspring
+</p>
+</div>
+<p>We can also use the addition rule to clean up our prediction a bit since most of the time it doesn’t matter which parent you get an allele from, so A1A2 and A2A1 are equivalent and we can add their probabilities together to get a combined <span class="math inline">\(p(A1A2)=0.5\)</span>.</p>
+<p>Also notice that in the tree diagrams and in parentheses in the meiosis drawings that we often just write the gene/variant shorthand. This shorthand is called the <strong>genotype</strong> and is pretty useful since it can save you from drawing a lot of chromosomes, but if you need the chromosomes to be sure you understand what’s going on, feel free to sketch away.</p>
+</div>
+<div id="intro-to-dna" class="section level4">
+<h4><span class="header-section-number">1.8.2.3</span> intro to DNA</h4>
+<p>There are 4 main DNA letters (a.k.a. <em>bases</em>) - A, T, C, G - that make up genes, which can be thought of as DNA “words”. While it’s not my favorite analogy, it works reasonably well - genes are collections of DNA information. There are variants (different versions) of genes that change the letters, and many of those change the information the gene contains, and can change the organism.</p>
+</div>
+<div id="genetic-notation" class="section level4">
+<h4><span class="header-section-number">1.8.2.4</span> genetic “notation”</h4>
+<p>Geneticists (a lot like mathematicians) use abbreviations as short cuts a lot. They are first introduced above in the <em>Genetics Terminology</em> section, and again discussed at the end of the <em>Thinking Probabilistically</em> section but we’ll lay it out more here.</p>
+<p>Every gene has an abbreviated name (like a nickname) that makes it easier to write. For example, the hemoglobin beta gene goes by <strong>Hb</strong>. We use that as a base, then we add other letters to modify this name to show that we are talking about specific variants like the <strong>HbS</strong> variant in hemoglobin beta that can cause sickle cell anemia. Just to break that down, the <strong>Hb</strong> part tells us the gene, and the <strong>S</strong> part tells us which variant.</p>
+<p>Sometimes we will use numbers, such as A1 and A2 to mean the 1 and 2 variants of the A gene, or for other genes we’ll use lowercase and uppercase, such as B and b, to mean different variants of the same gene.</p>
+<p>And as a review, writing just the letter shorthand for all of the genes and variants together is the <strong>genotype</strong> of an organism.</p>
+</div>
+</div>
+<div id="genetics-simulation" class="section level3">
+<h3><span class="header-section-number">1.8.3</span> Genetics Simulation</h3>
+<p>Now we’ll use R to simulate the same situation shown in the tree diagram above. This version takes the long way around, but it conceptually models meiosis (gamete formation) and fertilization for 1000 offspring.</p>
+<p>Our first set of parents have the genotypes below:<br />
+parent 1: A1/A1<br />
+parent 2: A2/A2</p>
+<p>The code below simulates meiosis and fertilization of 1000 offspring, makes a table, and graphs the results.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># set up the different variants that each parent has</span>
+parent1_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;A1&#39;</span>,<span class="st">&#39;A1&#39;</span>)
+parent2_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;A2&#39;</span>,<span class="st">&#39;A2&#39;</span>)
+
+<span class="co"># list of 1000 gametes from each parent, probability of each is equal by default</span>
+parent1_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent1_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+parent2_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent2_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># put gametes together to make 1000 offspring</span>
+cross_x1 &lt;-<span class="st"> </span><span class="kw">paste</span>(parent1_gametes, parent2_gametes, <span class="dt">sep=</span><span class="st">&quot;/&quot;</span>)
+offspring1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(cross_x1))
+
+<span class="co"># table</span>
+knitr<span class="op">::</span><span class="kw">kable</span>(offspring1, <span class="dt">caption =</span> <span class="st">&#39;A1xA2 parent cross simulation&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 1.2: </span>A1xA2 parent cross simulation</caption>
+<thead>
+<tr class="header">
+<th align="left">cross_x1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A1/A2</td>
+<td align="right">1000</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># makes a bar graph of the frequency of genotypes</span>
+<span class="kw">ggplot</span>(offspring1, <span class="kw">aes</span>(<span class="dt">x=</span>cross_x1, <span class="dt">y=</span>Freq)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>)</code></pre></div>
+<p><img src="probgen-bookdown_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Now that we have the results for that set of offspring (all have the A1/A2 genotype), we can look at these offspring as parents for a new generation of offspring. Now the parents are:<br />
+parent 1: A1/A2<br />
+parent 2: A1/A2</p>
+<p>The code below simulates meiosis and fertilization of 1000 offspring, makes a table, and graphs the results.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># set up the different variants that each parent has</span>
+parent3_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;A1&#39;</span>,<span class="st">&#39;A2&#39;</span>)
+parent4_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;A1&#39;</span>,<span class="st">&#39;A2&#39;</span>)
+
+<span class="co"># list of 1000 gametes from each parent, probability of each is equal by default</span>
+parent3_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent3_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+parent4_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent4_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># put gametes together to make 1000 offspring</span>
+cross_x2 &lt;-<span class="st"> </span><span class="kw">paste</span>(parent3_gametes, parent4_gametes, <span class="dt">sep=</span><span class="st">&quot;/&quot;</span>)
+cross_x2 &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;A2/A1&quot;</span>, <span class="st">&quot;A1/A2&quot;</span>, cross_x2) <span class="co"># order doesn&#39;t matter</span>
+offspring2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(cross_x2))
+
+<span class="co"># table</span>
+knitr<span class="op">::</span><span class="kw">kable</span>(offspring2, <span class="dt">caption =</span> <span class="st">&#39;A1/A2 inter-cross simulation&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 1.3: </span>A1/A2 inter-cross simulation</caption>
+<thead>
+<tr class="header">
+<th align="left">cross_x2</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A1/A1</td>
+<td align="right">253</td>
+</tr>
+<tr class="even">
+<td align="left">A1/A2</td>
+<td align="right">495</td>
+</tr>
+<tr class="odd">
+<td align="left">A2/A2</td>
+<td align="right">252</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># makes a bar graph of the frequency of genotypes</span>
+<span class="kw">ggplot</span>(offspring2, <span class="kw">aes</span>(<span class="dt">x=</span>cross_x2, <span class="dt">y=</span>Freq)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>)</code></pre></div>
+<p><img src="probgen-bookdown_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>How does this compare to our predicted probabilities from the tree diagram?<br />
+Remember that they were:<br />
+<span class="math inline">\(p(A1/A1) = 0.25\)</span><br />
+<span class="math inline">\(p(A1/A2) = 0.5\)</span><br />
+<span class="math inline">\(p(A2/A2) = 0.25\)</span></p>
+<p>Should be reasonably close.</p>
+<p>Just as an additional example, the same code adapted to use B and b variants of the B gene:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">parent1_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;B&#39;</span>,<span class="st">&#39;B&#39;</span>)
+parent2_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;b&#39;</span>,<span class="st">&#39;b&#39;</span>)
+
+parent1_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent1_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+parent2_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent2_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+
+cross_x1 &lt;-<span class="st"> </span><span class="kw">paste</span>(parent1_gametes, parent2_gametes, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)
+
+offspring1 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(cross_x1))
+knitr<span class="op">::</span><span class="kw">kable</span>(offspring1, <span class="dt">caption =</span> <span class="st">&#39;BBxbb parent cross simulation&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-5">Table 1.4: </span>BBxbb parent cross simulation</caption>
+<thead>
+<tr class="header">
+<th align="left">cross_x1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Bb</td>
+<td align="right">1000</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(offspring1, <span class="kw">aes</span>(<span class="dt">x=</span>cross_x1, <span class="dt">y=</span>Freq)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>)</code></pre></div>
+<p><img src="probgen-bookdown_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Now intercross the offspring from the first cross, each is Bb:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">parent3_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;B&#39;</span>,<span class="st">&#39;b&#39;</span>)
+parent4_variants &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;B&#39;</span>,<span class="st">&#39;b&#39;</span>)
+
+parent3_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent3_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+parent4_gametes &lt;-<span class="st"> </span><span class="kw">sample</span>(parent4_variants, <span class="dv">1000</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)
+
+cross_x2 &lt;-<span class="st"> </span><span class="kw">paste</span>(parent3_gametes, parent4_gametes, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)
+cross_x2 &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;bB&quot;</span>, <span class="st">&quot;Bb&quot;</span>, cross_x2)
+offspring2 &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">table</span>(cross_x2))
+knitr<span class="op">::</span><span class="kw">kable</span>(offspring2, <span class="dt">caption =</span> <span class="st">&#39;Bb inter-cross simulation&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-6">Table 1.5: </span>Bb inter-cross simulation</caption>
+<thead>
+<tr class="header">
+<th align="left">cross_x2</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">bb</td>
+<td align="right">239</td>
+</tr>
+<tr class="even">
+<td align="left">Bb</td>
+<td align="right">506</td>
+</tr>
+<tr class="odd">
+<td align="left">BB</td>
+<td align="right">255</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(offspring2, <span class="kw">aes</span>(<span class="dt">x=</span>cross_x2, <span class="dt">y=</span>Freq)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_bar</span>(<span class="dt">stat=</span><span class="st">&quot;identity&quot;</span>)</code></pre></div>
+<p><img src="probgen-bookdown_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="trees.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/nerdcommander/probgen-bookdown/edit/master/01-basics.Rmd",
+"text": "Edit"
+},
+"download": ["probgen-bookdown.pdf", "probgen-bookdown.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
